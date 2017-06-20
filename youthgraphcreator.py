@@ -1,18 +1,18 @@
 import bpy
 
-data = [16.44, 23.50, 29.15, 17.99, 8.92]
-dates = ['6/7', '6/14', '6/21', '6/28', '7/5']
+data = [5.51, 5.75, 4.25]
+dates = ['6/7', '6/14', '6/21']
 
 number_of_bars = len(data)
-yscale = 30.0
+yscale = 10.0
 
-starting_amount = 950.00
+starting_amount = 132.85
 total = starting_amount
 
 for i in data:
     total += i
     
-goal = 1000.0
+goal = 500.0
 
 message_done = ''
 
