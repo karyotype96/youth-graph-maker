@@ -1,12 +1,12 @@
 import bpy
 
-data = [5.51, 5.75, 4.25]
-dates = ['6/7', '6/14', '6/21']
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+dates = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 
 number_of_bars = len(data)
 yscale = 10.0
 
-starting_amount = 132.85
+starting_amount = 250.00
 total = starting_amount
 
 for i in data:
@@ -96,9 +96,9 @@ bpy.context.scene.frame_current = 100
 for i in range(number_of_bars):
     bpy.context.scene.objects.active = bpy.data.objects['Bar{0}'.format(i+1)]
     bpy.context.scene.objects.active.scale[2] = (yscale / data[i])
+    bpy.data.objects['Bar{0}'.format(i+1)].select = True
+    bpy.ops.anim.keyframe_insert_menu(type='BUILTIN_KSI_LocScale')
     bpy.ops.object.select_all(action='TOGGLE')
-
-bpy.ops.anim.keyframe_insert_menu(type='BUILTIN_KSI_LocScale')
 
 bpy.context.scene.frame_current = 90
 
